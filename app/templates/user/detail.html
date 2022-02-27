@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Information on {{user.name}}</title>
+{% endblock %}
+
+{% block content %}
+    <h2>{{user.name}}</h2>
+    <p><small>{{user.email}}, <b>{{user.place_name}}</b></small></p>
+
+    <div class="container mt-1">
+        {% if user.journal != [] %}
+        {% for j in user.journal %}
+
+            <div class="row mt-2 border-bottom">
+                <div class="col-1">{{j.place_name}}</div>
+                <div class="col-1">{{weather['1'].timezone}}</div>
+            </div>
+
+        {% endfor %}
+    {% endif %}
+    </div>
+
+{% endblock %}

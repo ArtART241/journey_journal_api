@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>User List</title>
+{% endblock %}
+
+{% block content %}
+    <div class="container-md mt-5 border border-2">
+
+
+        {% for user in users %}
+
+            <div class="row mt-2 border-bottom">
+                <div class="col-1">{{user.id}}</div>
+                <div class="col">{{user.name}}</div>
+                <div class="col">{{user.place_name}}</div>
+                <div class="col-2"> <a class="btn btn-primary" href="/user/{{user.id}}">detail</a> </div>
+            </div>
+               
+
+
+        {% endfor %}
+
+    </div>
+
+{% endblock %}
